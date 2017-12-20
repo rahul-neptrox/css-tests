@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>match height</title>
+    <!-- Latest compiled and minified CSS & JS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+    <script src="//code.jquery.com/jquery.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+    <style>
+    .row.match-my-cols {
+        overflow: hidden;
+    }
+    
+    .row.match-my-cols [class*="col-"] {
+        margin-bottom: -99999px;
+        padding-bottom: 99999px;
+    }
+    
+    .match-my-cols .box {
+        background: none;
+        position: static;
+    }
+    
+    .match-my-cols [class*="col-"] {
+        background: #fff;
+    }
+    
+    .match-my-cols .box a {
+        position: relative;
+    }
+    /* Base Stuff Ignore */
+    
+    body {
+        background: #074812;
+        padding: 50px 0 100px;
+        -webkit-font-smoothing: antialiased;
+    }
+    
+    a {
+        transition: all 225ms ease;
+    }
+    
+    header {
+        margin-bottom: 25px;
+        text-align: center;
+    }
+    
+    .big-sexy-buttons {
+        margin-bottom: 25px;
+    }
+    
+    header h1 {
+        font-weight: 400;
+    }
+    
+    header .note {
+        margin: 0;
+        font-style: italic;
+        max-width: 600px;
+        margin: 55px auto 0;
+    }
+    
+    .container {
+        padding-top: 25px;
+        padding-bottom: 25px;
+        background: rgba(255, 255, 255, 0.1);
+    }
+    
+    .row {
+        padding-top: 25px;
+        padding-bottom: 25px;
+        background: rgba(255, 255, 255, 0.3);
+    }
+    
+    [class*="col-"] {
+        border: solid 1px #e3e3e3;
+        border-top-width: 2px;
+        border-bottom-width: 2px;
+        padding-top: 25px;
+        padding-bottom: 25px;
+        background: rgba(255, 255, 255, 0.5);
+    }
+    
+    [class*="col-"]:first-child {
+        border-left-width: 2px;
+    }
+    
+    [class*="col-"]:last-child {
+        border-right-width: 2px;
+    }
+    
+    .box {
+        padding: 25px 7% 0;
+        text-align: center;
+        position: relative;
+        background: #fff;
+    }
+    
+    .box h2 {
+        font-weight: 300;
+        letter-spacing: -0.05em;
+        margin-bottom: 15px;
+    }
+    
+    .box a {
+        display: block;
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        border-radius: 0;
+        padding: 25px 0;
+    }
+    
+    .box p {
+        padding-bottom: 125px;
+        font-size: 16px;
+        font-weight: 300;
+        opacity: 0.8;
+    }
+    
+    .legend {
+        position: fixed;
+        top: 5px;
+        right: 5px;
+        text-align: center;
+        border-radius: 3px;
+        font-size: 12px;
+        overflow: hidden;
+    }
+    
+    .legend span {
+        display: block;
+        padding: 3px 5px;
+        line-height: 100%;
+        color: #fff;
+        font-weight: 700;
+    }
+    
+    .key-container {
+        background: rgba(255, 255, 255, 0.1);
+    }
+    
+    .key-row {
+        background: rgba(255, 255, 255, 0.4);
+    }
+    
+    .key-col {
+        background: rgba(255, 255, 255, 0.9);
+        color: #555 !important;
+    }
+    
+    .key-box {
+        background: #fff;
+        color: #111 !important;
+    }
+    </style>
+</head>
+
+<body>
+    <article>
+        <header>
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-10 col-md-offset-1">
+                        <h1>Make Bootstrap Columns All the Same Height</h1>
+                        <p class="lead">Using a Negative Margin and Huge Padding Trick.</p>
+                        <a href="https://scotch.io/bar-talk/different-tricks-how-to-make-bootstrap-columns-all-the-same-height" class="btn btn-lg btn-info">Read More on Scotch.io</a>
+                        <p class="note">Note: Padding of 25px is added to the top and bottom of bootstrap stuff. All columns have a border added of 2px. Just for visualization purposes.</p>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <div class="big-sexy-buttons">
+            <div class="container">
+                <div class="row match-my-cols">
+                    <div class="col-sm-4">
+                        <div class="box">
+                            <h2>Oh My God!</h2>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad. adipisicing elit, sed do eiusmod tempor</p>
+                            <a href="#" class="btn btn-primary">Link 1</a>
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="box">
+                            <h2>Becky, Look at Her Butt!</h2>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor.</p>
+                            <a href="#" class="btn btn-primary">Link 2</a>
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="box">
+                            <h2>It is like so super-duper this is a crazy long sentence big!</h2>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad</p>
+                            <a href="#" class="btn btn-primary">Link 3</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="content">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-10 col-md-offset-1">
+                        <h2>Lorem Ipsum Dolor Sit Amet Consectetur Adi</h2>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p>
+                        <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Donec elementum ligula eu sapien consequat eleifend. </p>
+                        <p>Donec nec dolor erat, condimentum sagittis sem. Praesent porttitor porttitor risus, dapibus rutrum ipsum gravida et. Integer lectus nisi, facilisis sit amet eleifend nec, pharetra ut augue. Integer quam nunc, consequat nec egestas ac, volutpat ac nisi. </p>
+                        <p>Sed consectetur dignissim dignissim. Donec pretium est sit amet ipsum fringilla feugiat. Aliquam erat volutpat. Maecenas scelerisque, orci sit amet cursus tincidunt, libero nisl eleifend tortor, vitae cursus risus mauris vitae nisi. Cras laoreet ultrices ligula eget tempus. </p>
+                        <p>Aenean metus purus, iaculis ut imperdiet eget, sodales et massa. Duis pellentesque nisl vel massa dapibus non lacinia velit volutpat. Maecenas accumsan interdum sodales. In hac habitasse platea dictumst. Pellentesque ornare blandit orci, eget tristique risus convallis ut. Vivamus a sapien neque. </p>
+                        <h3>Lorem Ipsum Dolor Sit A</h3>
+                        <p>Nam quis sem orci. Phasellus ligula tellus, lobortis nec accumsan eget, mattis at erat. </p>
+                        <p>Pellentesque at odio quam, et egestas nunc. Sed quis leo et orci consectetur porttitor nec fringilla lorem. Duis sit amet adipiscing enim. </p>
+                        <p>Suspendisse luctus justo sed risus dictum eu dignissim libero iaculis. Donec velit magna, auctor ullamcorper blandit eget, lobortis ac lectus. Praesent rhoncus eros quis lectus tempor a commodo leo aliquam. Donec convallis libero in nibh feugiat eleifend aliquet eros vehicula. </p>
+                        <p>Quisque est dui, auctor ac adipiscing at, facilisis ac magna. Mauris semper iaculis erat, sed facilisis felis ultrices eu. Phasellus ut orci non lectus ornare facilisis. Suspendisse gravida malesuada mollis. Praesent rutrum orci non nulla aliquet aliquam. </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </article>
+    <div class="legend">
+        <span class="key-container">.container</span>
+        <span class="key-row">.row</span>
+        <span class="key-col">.col-*</span>
+        <span class="key-box">.box (custom)</span>
+    </div>
+    <!-- jQuery first, then Tether, then Bootstrap JS. -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js" integrity="sha384-3ceskX3iaEnIogmQchP8opvBy3Mi7Ce34nWjpBIwVTHfGYWQS9jwHDVRnpKKHJg7" crossorigin="anonymous"></script>
+</body>
+
+</html>

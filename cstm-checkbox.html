@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+
+	<style>
+	.regular-checkbox{
+		display: inline-block;
+		border-radius: 0;
+		width: 38px;
+		height: 38px;
+		border: 1px solid #ccc;
+	}
+	.regular-checkbox input{
+		opacity: 0;
+		position: absolute;
+	}
+	.regular-checkbox small{
+		width: 100%;
+		height: 100%;
+		float: left;
+	}
+	.regular-checkbox input:checked ~ small:after{
+		content: '\2714';
+		height: 38px; 
+		width: 38px;
+		color: #333;
+		font-size: 26px;
+		text-align: center;
+		float: left;
+	}
+	</style>
+</head>
+<body>
+	<form>
+	  <input type="checkbox" name="vehicle1" value="Bike"> I have a bike<br>
+	  <input type="checkbox" name="vehicle2" value="Car"> I have a car 
+	</form>
+	<label class="regular-checkbox">
+	    <input type="checkbox">
+	    <small></small>
+	</label>
+</body>
+</html>

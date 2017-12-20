@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>transition test 1</title>
+    <style>
+    .container {
+        width: 300px;
+        height: 400px;
+        overflow: hidden;
+        background-color: #ddd;
+        color: #333;
+        margin: 0 auto;
+        position: relative;
+    }
+    
+    .box {
+        position: absolute;
+        bottom: 0;
+        top: 0;
+        transform: translateY(100%);
+        background-color: #999;
+        color: #fff;
+        padding: 10px;
+        transition: 1s all;
+    }
+    
+    .container:hover .box {
+        transform: translateY(0%);
+    }
+    
+    .animate2 {
+        width: 50px;
+        height: 50px;
+        border-radius: 50px;
+        line-height: 50px;
+        text-align: center;
+        background-color: red;
+        color: #000;
+        font-size: 16px;
+        position: absolute;
+        left: 50%;
+        top: 100%;
+        transform: translateX(-50%);
+        transition: 1s all;
+    }
+	.container:hover .animate2 {
+		top: 60%;
+	}
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="box">
+            <h3>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Neque corporis, amet.</h3>
+            <div class="overlay-content">
+                <p>Overlay content Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+            </div>
+        </div>
+        <div class="animate2">+</div>
+    </div>
+</body>
+
+</html>

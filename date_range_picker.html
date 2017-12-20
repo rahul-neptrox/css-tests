@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>date range picker</title>
+    <!-- Latest compiled and minified CSS & JS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/bootstrap.daterangepicker/2/daterangepicker.css" />
+</head>
+
+<body>
+    <div id="reportrange" class="pull-right pos-rel" style="background: #fff; cursor: pointer; padding: 2px 10px; border: 1px solid #ccc; width: 100%;font-size: 12px;line-height: 26px; margin-bottom: 16px;">
+        <i class="glyphicon glyphicon-calendar fa fa-calendar"></i>&nbsp;
+        <span style="padding-left: 34px;"></span> <b class="caret"></b>
+    </div>
+    <!-- jQuery first, then Tether, then Bootstrap JS. -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js" integrity="sha384-3ceskX3iaEnIogmQchP8opvBy3Mi7Ce34nWjpBIwVTHfGYWQS9jwHDVRnpKKHJg7" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="//cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="//cdn.jsdelivr.net/bootstrap.daterangepicker/2/daterangepicker.js"></script>
+    <script type="text/javascript">
+    $(function() {
+
+        var start = moment().subtract(29, 'days');
+        var end = moment();
+
+        function cb(start, end) {
+            $('#reportrange span').html(start.format('MMMM D, YYYY') + ' - ' + end.format('MMMM D, YYYY'));
+        }
+
+        $('#reportrange').daterangepicker({
+            startDate: start,
+            endDate: end,
+            ranges: {
+                'Today': [moment(), moment()],
+                'Yesterday': [moment().subtract(1, 'days'), moment().subtract(1, 'days')],
+                'Last 7 Days': [moment().subtract(6, 'days'), moment()],
+                'Last 30 Days': [moment().subtract(29, 'days'), moment()],
+                'This Month': [moment().startOf('month'), moment().endOf('month')],
+                'Last Month': [moment().subtract(1, 'month').startOf('month'), moment().subtract(1, 'month').endOf('month')]
+            }
+        }, cb);
+
+        cb(start, end);
+
+    });
+    </script>
+</body>
+
+</html>

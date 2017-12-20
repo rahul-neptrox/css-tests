@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>transition spilit</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <style>
+    .service-section {
+        background-color: #f9f9f9;
+        overflow: hidden;
+    }
+
+    .service-container {
+        height: 220px;
+        position: relative;
+        -webkit-perspective: 800px;
+        perspective: 800px;
+        color: #fff;
+    }
+
+    .service-section .service-container .front-part,
+    .service-section .service-container .back-part {
+        position: absolute;
+        top: 0;
+        left: 0;
+        text-align: center;
+        height: 220px;
+        width: 100%;
+        padding: 20px;
+        overflow: hidden;
+        vertical-align: middle;
+        -webkit-transition: all .5s;
+        -moz-transition: all .5s;
+        -ms-transition: all .5s;
+        -o-transition: all .5s;
+        transition: all .5s;
+    }
+
+    .front-part {
+        background-color: #ffc000;
+        z-index: 2;
+    }
+
+    .service-container:hover .front-part,
+    .service-container:focus .front-part,
+    .service-container:active .front-part {
+        opacity: 0;
+        -webkit-transform: translateY(-110px) rotateX(90deg);
+        -moz-transform: translateY(-110px) rotateX(90deg);
+        -ms-transform: translateY(-110px) rotateX(90deg);
+        -o-transform: translateY(-110px) rotateX(90deg);
+        transform: translateY(-110px) rotateX(90deg);
+    }
+
+
+
+    .back-part {
+        background-color: #474747;
+        z-index: 1;
+        opacity: 0;
+        -webkit-transform: translateY(110px) rotateX(-90deg);
+        -moz-transform: translateY(110px) rotateX(-90deg);
+        -ms-transform: translateY(110px) rotateX(-90deg);
+        -o-transform: translateY(110px) rotateX(-90deg);
+        transform: translateY(110px) rotateX(-90deg);
+    }
+
+    .service-container:hover .back-part,
+    .service-container:focus .back-part,
+    .service-container:active .back-part {
+        opacity: 1;
+        -webkit-transform: rotateX(0);
+        -moz-transform: rotateX(0);
+        -ms-transform: rotateX(0);
+        -o-transform: rotateX(0);
+        transform: rotateX(0);
+    }
+
+    .box-content {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        left: 20px;
+        right: 20px;
+    }
+
+    .sevice-section .service-container:hover .back-part,
+    .sevice-section .service-container:hover .back-part,
+    .sevice-section .service-container:focus .back-part,
+    .sevice-section .service-container:active .back-part {
+        opacity: 1;
+        -webkit-transform: rotateX(0);
+        -moz-transform: rotateX(0);
+        -ms-transform: rotateX(0);
+        -o-transform: rotateX(0);
+        transform: rotateX(0);
+    }
+    </style>
+</head>
+
+<body>
+    <div class="service-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3">
+                    <div class="service-container">
+                        <div class="front-part">
+                            <div class="box-content">
+                                <i class="fa fa-cog fa-2x"></i>
+                                <h4>DESIGN</h4>
+                            </div>
+                        </div>
+                        <div class="back-part">
+                            <div class="box-content">
+                                <i class="fa fa-cog fa-2x"></i>
+                                <h4>Flipped</h4>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
+</body>
+
+</html>
